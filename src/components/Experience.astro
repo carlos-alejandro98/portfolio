@@ -1,0 +1,28 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+    {
+        title: "Desarrollador Liferay",
+        date: "Abril 2022 - Actualidad",
+        description:
+            "Desarrollo de portlets y temas para Liferay",
+    },
+    {
+        title: "Etc",
+        date: "April 2022",
+        description:
+            "Ejemplo",
+    }
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
