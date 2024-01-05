@@ -5,38 +5,51 @@ const projects = [
         description:
             "Pagina web de automotora Kaufmann, realizada en conjunto con la agencia digital 3D.",
         link: "https://kaufmann.cl/",
-        image: "/projects/kaufmann.webp",
-        tags: ["HTML", "CSS", "JavaScript", "Liferay", "Java"]
+        image: "kaufmann.jpg",
+        tags: ["HTML", "CSS", "JavaScript", "Liferay", "Java"],
+        color: "bg-black",
+        text: "text-black",
     },
     {
         title: "Transbank",
-        description: "Transbank es una empresa que provee servicios financieros y de pagos electrónicos.",
-        link: "https://www.publico.transbank.cl",
-        image: "/projects/transbank.webp",
-        tags: ["HTML", "CSS", "JavaScript", "Liferay", "Java"]
-    }
+        description:
+            "Transbank es una empresa que provee servicios financieros y de pagos electrónicos.",
+        link: "https://publico.transbank.cl",
+        image: "/transbank.webp",
+        tags: ["HTML", "CSS", "JavaScript", "Liferay", "Java"],
+        color: "bg-pink-500",
+        text: "text-pink-500",
+    },
 ];
 ---
 
 {
-    projects.map(({ title, description, tags, image }) => (
-        <article class="mb-10">
-            <h3 class="text-2xl font-semibold mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-2 flex-row flex-wrap">
-                {tags.map((tag) => (
-                    <li>
-                        <span class="flex gap-x-2 rounden-full text-s py-1 px-2">
-                            {tag}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-            <img 
-                class="rounded shadow-2xl shadow-white/10 mt-5"
-                src={image} 
-                alt={title} 
-            />
-        </article>
+    projects.map(({ title, description, tags, image, color, text, link }) => (
+        <div class="relative flex  flex-col justify-center overflow-hidde py-6 ">
+            <div class="group relative cursor-pointer overflow-hidden bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10">
+                <span class={`absolute top-10 z-0 h-20 w-20 rounded-full transition-all duration-300 group-hover:scale-[10] ${color}`} />
+                <div class="relative z-10 mx-auto max-w-md">
+                    <span class={`grid h-20 w-20 place-items-center rounded-full ${color} transition-all duration-300 group-hover:${color}`}>
+                        <img src={image} alt="" class="h-20 w-20 rounded-full" />
+                    </span>
+                    <div class="space-y-6 pt-5 text-base leading-7 text-gray-600 transition-all duration-300 group-hover:text-white/90">
+                        <p>
+                            {description}
+                        </p>
+                    </div>
+                    <div class="pt-5 text-base font-semibold leading-7">
+                        <p>
+                            <a
+                                href={link}
+                                target="_blank"
+                                class={`${text} transition-all duration-300 group-hover:text-white`}
+                            >
+                                Ver &rarr;
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     ))
 }
