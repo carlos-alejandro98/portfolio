@@ -1,13 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import LinkedIn from "../components/icons/LinkedIn.astro";
-import Github from "../components/icons/Github.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GithubIcon from "../components/icons/Github.astro";
 import SocialPill from "../components/SocialPill.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../components/icons/Briefcase.astro";
-import Code from "../components/icons/Code.astro";
+import CodeIcon from "../components/icons/Code.astro";
 import Projects from "../components/Projects.astro";
+import UserIcon from "../components/icons/User.astro";
+import Discord from "../components/Social/Discord.astro";
+import LinkedIn from "../components/Social/LinkedIn.astro";
+import Github from "../components/Social/Github.astro";
+import Mail from "../components/Social/Mail.astro";
 ---
 
 <Layout
@@ -18,10 +23,13 @@ import Projects from "../components/Projects.astro";
 		<SectionContainer id="inicio" class="py-20 pb-24">
 			<div class="flex lg:flex-nowrap flex-wrap">
 				<h1 class="text-5xl font-bold pb-4 flex items-center">
-					Hey, soy Carlos
-					<!--<Badge>25 años</Badge> -->
+					Hola, soy Carlos
 				</h1>
-				<iframe src='https://my.spline.design/untitled-9d3767a4ca5bf4e26aecffda1866ba82/' class="rounded" width='100%' height='450px'></iframe>
+				<iframe
+					src="https://my.spline.design/untitled-9d3767a4ca5bf4e26aecffda1866ba82/"
+					class="rounded"
+					width="100%"
+					height="450px"></iframe>
 			</div>
 			<h2 class="text-1xl opacity-80 text-wrap max-w-[700px]">
 				<span>+3 años de experiencia.</span>
@@ -33,11 +41,11 @@ import Projects from "../components/Projects.astro";
 				<SocialPill
 					href="https://www.linkedin.com/in/carlos-abarca-calderon-716432148/"
 				>
-					<LinkedIn class="size-4 md:size-6" />
+					<LinkedInIcon class="size-4 md:size-6" />
 					LinkedIn
 				</SocialPill>
 				<SocialPill href="https://github.com/carlos-alejandro98">
-					<Github class="size-4 md:size-6" />
+					<GithubIcon class="size-4 md:size-6" />
 					Github
 				</SocialPill>
 			</nav>
@@ -53,10 +61,31 @@ import Projects from "../components/Projects.astro";
 
 		<SectionContainer id="proyectos">
 			<h2 class="text-2xl font-bold pb-6 flex gap-x-3 items-center">
-				<Code class="size-4 md:size-6" />
+				<CodeIcon class="size-4 md:size-6" />
 				Proyectos
 			</h2>
 			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-2xl font-bold pb-6 flex gap-x-3 items-center">
+				<UserIcon class="size-4 md:size-6" />
+				Redes Sociales
+			</h2>
+			<div class="flex flex-wrap gap-10">
+				<div class="light-button discord">
+					<Discord />
+				</div>
+				<div class="light-button linkedin">
+					<LinkedIn />
+				</div>
+				<div class="light-button github">
+					<Github />
+				</div>
+				<div class="light-button correo">
+					<Mail />
+				</div>
+			</div>
 		</SectionContainer>
 	</main>
 </Layout>
