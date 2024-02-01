@@ -1,0 +1,36 @@
+---
+const personalImageAlt = "Carlos Abarca";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
+---
+
+<div class="flex max-sm:flex-wrap justify-center align-center">
+  <div>
+    <h1 class="font-bold tracking-tight font-degrade text-[2rem] text-pretty">
+      Hola, soy Carlos Abarca
+    </h1>
+    <p class="mt-6 text-x [&>strong]:font-semibold text-white text-pretty">
+      Soy un desarrollador web que le encanta aprender cosas nuevas y compartir
+      conocimiento.
+    </p>
+    <nav class="flex flex-wrap gap-4 mt-8">
+      <SocialPill href="mailto:carlos.alejandro1998@icloud.com">
+        <MailIcon class="size-4" />
+        Contáctame
+      </SocialPill>
+      <SocialPill href="https://www.linkedin.com/in/carlos-abarca-calderon-716432148/">
+        <LinkedInIcon class="size-4" />
+        LinkedIn
+      </SocialPill>
+    </nav>
+  </div>
+  <div class="flex justify-center max-sm:mt-6">
+    <img
+      class="shadow-lg size-72 max-sm:w-full"
+      src="/yo2.jpg"
+      alt={personalImageAlt}
+    />
+  </div>
+</div>

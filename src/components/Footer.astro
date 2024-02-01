@@ -1,11 +1,27 @@
-<footer class="rounded-lg shadow m-4 bg-black/20 backdrop-blur-lg mt-20 mb-10">
-    <div
-        class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center justify-center"
+---
+const currentYear = new Date().getFullYear()
+---
+
+<footer
+  class="rounded-lg shadow m-4 bg-black/5 dark:bg-black/20 backdrop-blur-lg text-white w-full xl:w-[1120px] mx-auto mb-10"
+>
+  <div
+    class="w-full max-w-screen-xl p-4 mx-auto md:flex md:items-center md:justify-between"
+  >
+    <span
+      class="text-sm sm:text-center text-white"
+      >© {currentYear}
+      Carlos abarca
+    </span>
+    <ul
+      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
     >
-        <span class="text-sm sm:text-center text-white"
-            >© 2024 <a href="https://www.linkedin.com/in/carlos-abarca-calderon-716432148/" class="hover:underline"
-                >Carlos Abarca™</a
-            >. Todos los derechos reservados.
-        </span>
-    </div>
+      <li>
+        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
+      </li>
+      <li>
+        <a href="mailto:carlos.alejandro1998@icloud.com" class="hover:underline">Contacto</a>
+      </li>
+    </ul>
+  </div>
 </footer>

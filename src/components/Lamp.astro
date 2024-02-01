@@ -1,0 +1,93 @@
+<script>
+    const lamp = document.getElementById("lampid");
+
+    if (lamp != null) {
+        lamp.addEventListener("click", () => {
+            lamp.classList.toggle("light");
+        });
+    }
+</script>
+
+<div class="container-lamp">
+    <div class="lamp-container">
+        <div class="rope"></div>
+        <div class="lamp" id="lampid"></div>
+    </div>
+</div>
+
+<style is:global>
+
+    .lamp-container {
+        width: 200px;
+        height: 200px;
+        position: fixed;
+        right: 0;
+    }
+
+    .rope {
+        height: 120px;
+        width: 2px;
+        margin: 0 auto;
+        z-index: 10;
+        background-color: #000;
+        position: relative;
+        transform-origin: top center;
+        animation: swing-rope 1s infinite ease-in-out alternate;
+        box-shadow: -76px -10px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .rope:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 116px;
+        left: -4px;
+        border-bottom: 18px solid #000;
+        border-top: 0 transparent;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-radius: 4px;
+    }
+
+    .lamp {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 131px;
+        left: 70px;
+        cursor: pointer;
+        transform-origin: top center;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        box-shadow:
+            -76px -24px 4px rgba(0, 0, 0, 0.1),
+            0 0 6px rgba(255, 255, 255, 0.2),
+            inset 0 0 4px rgba(255, 255, 255, 0.2);
+        animation: swing-lamp 1s infinite ease-in-out alternate;
+    }
+
+    .lamp.light {
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 100px rgba(255, 255, 255, 0.6);
+    }
+
+    @keyframes swing-rope {
+        0% {
+            transform: rotate(5deg);
+        }
+        100% {
+            transform: rotate(-5deg);
+        }
+    }
+
+    @keyframes swing-lamp {
+        0% {
+            transform: translateX(-16px);
+        }
+        100% {
+            transform: translateX(16px);
+        }
+    }
+</style>

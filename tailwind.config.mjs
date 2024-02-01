@@ -1,9 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	darkMode: "class",
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				'color-carlos': '#2196f3',
+			},
+		}
 	},
 	plugins: [],
 }
