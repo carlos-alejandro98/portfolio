@@ -1,5 +1,4 @@
 ---
-import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
@@ -68,13 +67,6 @@ const PROJECTS = [
 
       <div class="mt-2 text-white">{description}</div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
           {link && (
             <LinkButton href={link}>
               <Link class="size-4" />
