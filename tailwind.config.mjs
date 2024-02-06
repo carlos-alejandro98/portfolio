@@ -8,7 +8,7 @@ export default {
 				'color-carlos': '#2196f3',
 			},
 			backgroundImage: {
-				'radial-gradient': 'radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%)',
+				'radial-gradient': 'linear-gradient(89.7deg, rgb(0, 0, 0) -10.7%, rgb(53, 92, 125) 88.8%);',
 			},
 		}
 	},
