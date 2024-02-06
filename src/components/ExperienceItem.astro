@@ -1,6 +1,4 @@
 ---
-import LinkInline from "./LinkInline.astro";
-
 interface Props {
   title: string;
   description: string;
@@ -8,7 +6,7 @@ interface Props {
   date: string;
 }
 
-const { title, description, link, date } = Astro.props;
+const { title, description, date } = Astro.props;
 ---
 
 <!-- Item #1 -->
