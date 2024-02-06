@@ -3,12 +3,18 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Liferay from "./icons/Liferay.astro"
 
 const TAGS = {
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white",
     icon: NextJS,
+  },
+  LIFERAY: {
+    name: "Liferay",
+    class: "bg-[#2D55A8] text-white",
+    icon: Liferay,
   },
   TAILWIND: {
     name: "Tailwind CSS",
@@ -24,7 +30,7 @@ const PROJECTS = [
     link: "https://svgl.vercel.app/",
     github: "https://github.com/pheralb/svgl",
     image: "/projects/kaufmann.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.LIFERAY],
   },
   {
     title: "Transbank",
@@ -32,7 +38,7 @@ const PROJECTS = [
       "Transbank es una empresa que provee servicios financieros y de pagos electrónicos.",
     link: "https://adventjs.dev",
     image: "/projects/transbank.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    tags: [TAGS.LIFERAY],
   },
 ]
 ---
