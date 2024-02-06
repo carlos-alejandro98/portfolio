@@ -1,22 +1,67 @@
 <script>
     const lamp = document.getElementById("lampid");
-
+    const switchSelect = document.getElementById("switch") as HTMLInputElement;
     if (lamp != null) {
         lamp.addEventListener("click", () => {
             lamp.classList.toggle("light");
+            //validar check box
+            if (switchSelect != null) {
+                if (switchSelect != null) {
+                    switchSelect.checked = !switchSelect.checked;
+                }
+            }
+            // si esta checkeado se agrega clase al html
+            if (switchSelect != null) {
+                if ((switchSelect as HTMLInputElement).checked) {
+                    document.documentElement.classList.remove("dark");
+                    //almacenar en local storage
+                    localStorage.setItem("theme", "light");
+                } else {
+                    document.documentElement.classList.add("dark");
+                    //almacenar en local storage
+                    localStorage.setItem("theme", "dark");
+                }
+            }
         });
     }
+
+    // validar con el local storage el checkbox
+    const theme = localStorage.getItem("theme");
+    if (theme === "light") {
+        if (lamp != null) {
+            lamp.classList.toggle("light");
+        }
+        switchSelect.checked = true;
+    } else {
+        if (lamp != null) {
+            lamp.classList.toggle("dark");
+        }
+        switchSelect.checked = false;   
+        document.documentElement.classList.add("dark");
+    }
+
+
+    /* const hours = new Date().getHours();
+    const isDayTime = hours > 6 && hours < 20;
+
+    if (isDayTime) {
+        // add class in the html
+        document.documentElement.classList.add("light");
+    } else {
+        // add class in the body
+        document.documentElement.classList.add("dark");
+    } */
 </script>
 
 <div class="container-lamp">
     <div class="lamp-container">
         <div class="rope"></div>
         <div class="lamp" id="lampid"></div>
+        <input class="hidden" type="checkbox" id="switch" />
     </div>
 </div>
 
 <style is:global>
-
     .lamp-container {
         width: 200px;
         height: 200px;

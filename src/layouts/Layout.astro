@@ -12,14 +12,6 @@ interface Props {
 }
 
 const { description, title } = Astro.props;
-
-const hours = new Date().getHours();
-const isDayTime = hours > 6 && hours < 20;
-if(isDayTime === true){
-  console.log('day');
-} else {
-  console.log('night');
-}
 ---
 
 <!doctype html>
@@ -34,7 +26,7 @@ if(isDayTime === true){
     <ViewTransitions />
   </head>
 
-  <body class="relative antialiased">
+  <body class="relative antialiased text-black dark:text-white dark:bg-radial-gradient">
     <Header />
     <Lamp />
     <slot />
@@ -53,7 +45,7 @@ if(isDayTime === true){
         color: white;
         display: flex;
         flex-direction: column;
-        background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+        background: linear-gradient(67.6deg, rgb(225, 242, 254) -2.8%, rgb(193, 224, 250) 44.6%, rgb(19, 116, 197) 102.4%);
       }
 
       @media (prefers-reduced-motion: reduce) {
