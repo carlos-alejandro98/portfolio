@@ -24,12 +24,21 @@ const icons = [
     {
         icon: "/tecnology/nodejs.png",
     },
+    {
+        icon: "/tecnology/docker.png",
+    },
+    {
+        icon: "/tecnology/github.png",
+    },
+    {
+        icon: "/tecnology/java.png",
+    },
 ];
 
 ---
 
 
-<div class="logos">
+<div class="logos dark:bg-backgroundCarouselBlack">
     <div class="logos-slide">
         {icons.map((iconItem) => <img loading="lazy" src={ iconItem.icon } />)}
     </div>
@@ -51,6 +60,8 @@ const icons = [
         padding: 30px 0;
         white-space: nowrap;
         position: relative;
+        backdrop-filter: blur(1px);
+        margin-top: 2rem;
     }
 
     .logos:before,
@@ -77,7 +88,7 @@ const icons = [
 
     .logos-slide {
         display: flex;
-        animation: 30s slide infinite linear;
+        animation: 40s slide infinite linear;
     }
 
     .logos-slide img {
