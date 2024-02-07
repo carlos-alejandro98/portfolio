@@ -1,0 +1,120 @@
+<div class="containerSun flex max-[768px]:hidden">
+    <div class="cloud front">
+        <span class="left-front"></span>
+        <span class="right-front"></span>
+    </div>
+    <span class="sun sunshine"></span>
+    <span class="sun"></span>
+    <div class="cloud back">
+        <span class="left-back"></span>
+        <span class="right-back"></span>
+    </div>
+</div>
+
+<style>
+    .containerSun {
+        width: 70px;
+        height: 70px;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+        top: 1rem;
+        left: 1rem;
+        position: fixed;
+    }
+
+    .cloud {
+        width: 110px;
+    }
+
+    .front {
+        padding-top: 45px;
+        margin-left: 0px;
+        display: inline;
+        position: absolute;
+        z-index: 11;
+        animation: clouds 8s infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    .back {
+        margin-top: 0px;
+        margin-left: 2rem;
+        z-index: 12;
+        animation: clouds 12s infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    .right-front {
+        width: 33px;
+        height: 25px;
+        border-radius: 50% 50% 50% 0%;
+        background-color: #4c9beb;
+        display: inline-block;
+        margin-left: -25px;
+    }
+
+    .left-front {
+        width: 35px;
+        height: 35px;
+        border-radius: 50% 50% 0% 50%;
+        background-color: #4c9beb;
+        display: inline-block;
+    }
+
+    .right-back {
+        width: 23px;
+        height: 20px;
+        border-radius: 50% 50% 50% 0%;
+        background-color: #4c9beb;
+        display: inline-block;
+        margin-left: -20px;
+    }
+
+    .left-back {
+        width: 25px;
+        height: 25px;
+        border-radius: 50% 50% 0% 50%;
+        background-color: #4c9beb;
+        display: inline-block;
+    }
+
+    .sun {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(to right, #fcbb04, #fffc00);
+        border-radius: 60px;
+        display: inline;
+        position: absolute;
+    }
+
+    .sunshine {
+        animation: sunshines 2s infinite;
+    }
+
+    @keyframes sunshines {
+        0% {
+            transform: scale(1);
+            opacity: 0.6;
+        }
+
+        100% {
+            transform: scale(1.4);
+            opacity: 0;
+        }
+    }
+
+    @keyframes clouds {
+        0% {
+            transform: translateX(15px);
+        }
+
+        50% {
+            transform: translateX(0px);
+        }
+
+        100% {
+            transform: translateX(15px);
+        }
+    }
+</style>

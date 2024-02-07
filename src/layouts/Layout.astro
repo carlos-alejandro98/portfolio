@@ -5,6 +5,8 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Lamp from "../components/Lamp.astro";
 import { ViewTransitions } from "astro:transitions";
+import Soon from "@/components/Soon.astro";
+import Moon from "@/components/Moon.astro";
 
 interface Props {
   title: string;
@@ -12,6 +14,18 @@ interface Props {
 }
 
 const { description, title } = Astro.props;
+
+const hours = new Date().getHours();
+const isDayTime = hours > 6 && hours < 20;
+let day:boolean;
+
+if (isDayTime) {
+  // add class in the html
+  day = true;
+} else {
+  // add class in the body
+  day = false;
+}
 ---
 
 <!doctype html>
@@ -26,9 +40,15 @@ const { description, title } = Astro.props;
     <ViewTransitions />
   </head>
 
-  <body class="relative antialiased text-black dark:text-white dark:bg-radial-gradient">
+  <body
+    class="relative antialiased text-black dark:text-white dark:bg-radial-gradient"
+  >
     <Header />
     <Lamp />
+    {
+      day ? <Soon /> : <Moon />
+    }
+    
     <slot />
     <Footer />
     <style is:global>
@@ -45,7 +65,12 @@ const { description, title } = Astro.props;
         color: white;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(67.6deg, rgb(225, 242, 254) -2.8%, rgb(193, 224, 250) 44.6%, rgb(19, 116, 197) 102.4%);
+        background: linear-gradient(
+          67.6deg,
+          rgb(225, 242, 254) -2.8%,
+          rgb(193, 224, 250) 44.6%,
+          rgb(19, 116, 197) 102.4%
+        );
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -103,7 +128,7 @@ const { description, title } = Astro.props;
         }
       }
 
-      .font-degrade{
+      .font-degrade {
         background: linear-gradient(45deg, #2196f3 50%, #010c14 100%);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
