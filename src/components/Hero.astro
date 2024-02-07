@@ -3,13 +3,27 @@ const personalImageAlt = "Carlos Abarca";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
-import Carousel from "@/components/Carousel.astro";
+
+const hours = new Date().getHours();
+console.log(hours);
+let textoBienvenida;
+
+if (hours <= 12) {
+  textoBienvenida = "Buenos días";
+} else if (hours <= 18) {
+  textoBienvenida = "Buenas tardes";
+} else {
+  textoBienvenida = "Buenas noches";
+}
+
 ---
 
 <div class="flex max-sm:flex-wrap justify-center align-center">
   <div>
-    <h1 class="font-bold tracking-tight font-degrade text-[2rem] text-pretty">
-      Hola, soy Carlos Abarca
+    <h1 class="font-bold tracking-tight text-[2rem] text-pretty">
+      {textoBienvenida}
+      <br/>
+      Soy Carlos Abarca
     </h1>
     <p class="mt-6 text-x [&>strong]:font-semibold text-pretty">
       Soy un desarrollador web que le encanta aprender cosas nuevas y compartir
@@ -34,4 +48,3 @@ import Carousel from "@/components/Carousel.astro";
     />
   </div>
 </div>
-<Carousel />

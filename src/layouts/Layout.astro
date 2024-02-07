@@ -5,8 +5,6 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Lamp from "../components/Lamp.astro";
 import { ViewTransitions } from "astro:transitions";
-import Soon from "@/components/Soon.astro";
-import Moon from "@/components/Moon.astro";
 
 interface Props {
   title: string;
@@ -14,18 +12,6 @@ interface Props {
 }
 
 const { description, title } = Astro.props;
-
-const hours = new Date().getHours();
-const isDayTime = hours > 6 && hours < 20;
-let day:boolean;
-
-if (isDayTime) {
-  // add class in the html
-  day = true;
-} else {
-  // add class in the body
-  day = false;
-}
 ---
 
 <!doctype html>
@@ -45,10 +31,6 @@ if (isDayTime) {
   >
     <Header />
     <Lamp />
-    {
-      day ? <Soon /> : <Moon />
-    }
-    
     <slot />
     <Footer />
     <style is:global>
