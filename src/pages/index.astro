@@ -1,33 +1,34 @@
 ---
-import Layout from "@/layouts/Layout.astro"
+import Layout from "@/layouts/Layout.astro";
 
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import BookIcon from "@/components/icons/Book.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
-import CertificateCard from "@/components/CertificateCard.astro"
+import AboutMe from "@/components/AboutMe.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import BookIcon from "@/components/icons/Book.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import Experience from "@/components/Experience.astro";
+import ProfileCheck from "@/components/icons/ProfileCheck.astro";
+import Projects from "@/components/Projects.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import CertificateCard from "@/components/CertificateCard.astro";
 ---
 
-<Layout
-  title="Porfolio de Carlos Abarca"
-  description=""
->
+<Layout title="Porfolio de Carlos Abarca" description="">
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
-    <div class="space-y-24">
+  </main>
+  <SectionContainer id="sobre-mi">
+    <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-8">
+      <ProfileCheck class="size-8" />
+      Sobre mi
+    </h2>
+    <AboutMe />
+  </SectionContainer>
+  <div class="space-y-24">
     <SectionContainer id="experiencia">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3"
-      >
+      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3">
         <Briefcase class="size-8" />
         Experiencia laboral
       </h2>
@@ -35,9 +36,7 @@ import CertificateCard from "@/components/CertificateCard.astro"
     </SectionContainer>
 
     <SectionContainer id="proyectos">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3"
-      >
+      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3">
         <CodeIcon class="size-7" />
         Proyectos
       </h2>
@@ -45,24 +44,11 @@ import CertificateCard from "@/components/CertificateCard.astro"
     </SectionContainer>
 
     <SectionContainer id="certificados">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3"
-      >
+      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3">
         <BookIcon class="size-7" />
         Certificados
       </h2>
       <CertificateCard />
     </SectionContainer>
-
-    <SectionContainer id="sobre-mi">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8"
-      >
-        <ProfileCheck class="size-8" />
-        Sobre mi
-      </h2>
-      <AboutMe />
-    </SectionContainer>
   </div>
-  </main>
 </Layout>
