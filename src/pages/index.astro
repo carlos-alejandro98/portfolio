@@ -18,15 +18,14 @@ import CertificateCard from "@/components/CertificateCard.astro";
     <SectionContainer class="py-16 md:py-36">
       <Hero />
     </SectionContainer>
-  </main>
-  <SectionContainer id="sobre-mi">
-    <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-8">
-      <ProfileCheck class="size-8" />
-      Sobre mi
-    </h2>
-    <AboutMe />
-  </SectionContainer>
-  <div class="space-y-24">
+
+    <SectionContainer id="sobre-mi">
+      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-8">
+        <ProfileCheck class="size-8" />
+        Sobre mi
+      </h2>
+      <AboutMe />
+    </SectionContainer>
     <SectionContainer id="experiencia">
       <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3">
         <Briefcase class="size-8" />
@@ -50,5 +49,5 @@ import CertificateCard from "@/components/CertificateCard.astro";
       </h2>
       <CertificateCard />
     </SectionContainer>
-  </div>
+  </main>
 </Layout>
