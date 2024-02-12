@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Lamp from "../components/Lamp.astro";
 import { ViewTransitions } from "astro:transitions";
+import Stars from "@/components/Stars.astro";
 
 interface Props {
   title: string;
@@ -30,6 +31,7 @@ const { description, title } = Astro.props;
     class="relative antialiased text-black dark:text-white dark:bg-radial-gradient"
   >
     <Header />
+    <Stars />
     <Lamp />
     <slot />
     <Footer />
@@ -53,6 +55,10 @@ const { description, title } = Astro.props;
           rgb(193, 224, 250) 44.6%,
           rgb(19, 116, 197) 102.4%
         );
+      }
+
+      html, body{
+        overflow-x: hidden;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -109,7 +115,6 @@ const { description, title } = Astro.props;
           }
         }
       }
-
       .font-degrade {
         background: linear-gradient(45deg, #2196f3 50%, #010c14 100%);
         -webkit-text-fill-color: transparent;

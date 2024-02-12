@@ -1,0 +1,193 @@
+<script>
+    const estrellasElement = document.querySelector(".estrellas");
+    if (estrellasElement) {
+        estrellasElement.innerHTML = stars(10);
+    }
+
+    function stars(num: any) {
+        let stars = "";
+        for (let i = 1; i < num; i++) {
+            stars += '<div class="star star-' + i + '"></div>';
+            stars +=
+                '<div class="shooting-star shooting-star-' + i + '"></div>';
+        }
+        return stars;
+    }
+</script>
+
+<div class="estrellas" id="star-container"></div>
+
+<style is:global>
+    
+
+    .star {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        border-radius: 1px;
+        background: #fff;
+    }
+
+    .star-1 {
+        top: 99px;
+        left: 65rem;
+        -webkit-animation: 3.1s flickr -1.3s infinite;
+        animation: 3.1s flickr -1.3s infinite;
+    }
+
+    .star-2 {
+        top: 30rem;
+        left: 55rem;
+        -webkit-animation: 2.9s flickr -0.9s infinite;
+        animation: 2.9s flickr -0.9s infinite;
+    }
+
+    .star-3 {
+        top: 45rem;
+        left: 60rem;
+        -webkit-animation: 2.7s flickr -0.5s infinite;
+        animation: 2.7s flickr -0.5s infinite;
+    }
+
+    .star-4 {
+        top: 55rem;
+        left: 63rem;
+        -webkit-animation: 3.5s flickr -1.6s infinite;
+        animation: 3.5s flickr -1.6s infinite;
+    }
+
+    .star-5 {
+        top: 60rem;
+        left: 30rem;
+        -webkit-animation: 3.8s flickr -0.6s infinite;
+        animation: 3.8s flickr -0.6s infinite;
+    }
+
+    .star-6 {
+        top: 45rem;
+        left: 20rem;
+        -webkit-animation: 3.9s flickr -0.6s infinite;
+        animation: 1.5s flickr -0.6s infinite;
+    }
+
+    .star-7 {
+        top: 4rem;
+        left: 5rem;
+        -webkit-animation: 4.0s flickr -0.6s infinite;
+        animation: 2s flickr -0.3s infinite;
+    }
+
+    .star-8 {
+        top: 4rem;
+        left: 5rem;
+        -webkit-animation: 3.8s flickr -0.6s infinite;
+        animation: 3.8s flickr -0.6s infinite;
+    }
+
+    .star-9 {
+        top: 5rem;
+        left: 50%;
+        -webkit-animation: 3.8s flickr -0.6s infinite;
+        animation: 3.8s flickr -0.6s infinite;
+    }
+
+    .star-10 {
+        top: 9rem;
+        left: 9rem;
+        -webkit-animation: 3.8s flickr -0.6s infinite;
+        animation: 3.8s flickr -0.6s infinite;
+    }
+
+    .shooting-star {
+        position: absolute;
+        top: -2rem;
+        left: 0;
+        width: 120px;
+        z-index: -1;
+        height: 2px;
+        background: url(/shooting-star.png) center
+            center no-repeat;
+        background-size: 100% 100%;
+        transform: rotate(20deg);
+    }
+
+    .shooting-star-1 {
+        top: 60px;
+        left: -10rem;
+        -webkit-animation: 25s shooting-star 0.1s infinite;
+        animation: 25s shooting-star 0.1s infinite;
+    }
+    .shooting-star-2 {
+        top: 70px;
+        left: -10rem;
+        -webkit-animation: 25s shooting-star 19.3s infinite;
+        animation: 25s shooting-star 19.3s infinite;
+    }
+
+    .shooting-star-3 {
+        top: -26px;
+        left: -10rem;
+        -webkit-animation: 21s shooting-star 16.6s infinite;
+        animation: 21s shooting-star 16.6s infinite;
+    }
+
+    .shooting-star-4 {
+        top: -9px;
+        left: -10rem;
+        -webkit-animation: 21s shooting-star 24.3s infinite;
+        animation: 21s shooting-star 24.3s infinite;
+    }
+
+    .shooting-star-5 {
+        top: 46px;
+        left: -10rem;
+        -webkit-animation: 24s shooting-star 16.7s infinite;
+        animation: 24s shooting-star 16.7s infinite;
+    }
+
+    .shooting-star-6 {
+        top: 49px;
+        left: -10rem;
+        -webkit-animation: 21s shooting-star 9.4s infinite;
+        animation: 21s shooting-star 9.4s infinite;
+    }
+
+    @-webkit-keyframes flickr {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.2;
+        }
+    }
+
+    @keyframes flickr {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.2;
+        }
+    }
+
+    @-webkit-keyframes shooting-star {
+        0% {
+            transform: translate3d(0, 0, 0) rotate(20deg);
+        }
+        10%,
+        100% {
+            transform: translate3d(2500px, 164px, 0) rotate(20deg);
+        }
+    }
+    @keyframes shooting-star {
+        0% {
+            transform: translate3d(0, 0, 0) rotate(20deg);
+        }
+        10%,
+        100% {
+            transform: translate3d(2500px, 164px, 0) rotate(20deg);
+        }
+    }
+</style>

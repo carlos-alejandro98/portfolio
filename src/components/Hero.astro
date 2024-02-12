@@ -5,12 +5,11 @@ import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
 
 const hours = new Date().getHours();
-console.log(hours);
 let textoBienvenida;
 
-if (hours <= 12) {
+if (hours < 12) {
   textoBienvenida = "Buenos días";
-} else if (hours <= 18) {
+} else if (hours < 17) {
   textoBienvenida = "Buenas tardes";
 } else {
   textoBienvenida = "Buenas noches";

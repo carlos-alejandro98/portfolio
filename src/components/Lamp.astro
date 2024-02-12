@@ -1,5 +1,6 @@
 <script>
     const lamp = document.getElementById("lampid");
+    const star = document.getElementById("star-container");
     const switchSelect = document.getElementById("switch") as HTMLInputElement;
     if (lamp != null) {
         lamp.addEventListener("click", () => {
@@ -13,10 +14,12 @@
             if (switchSelect != null) {
                 if ((switchSelect as HTMLInputElement).checked) {
                     document.documentElement.classList.add("dark");
+                    star?.classList.remove("hidden");
                     //almacenar en local storage
                     localStorage.setItem("theme", "dark");
                 } else {
                     document.documentElement.classList.remove("dark");
+                    star?.classList.add("hidden");
                     //almacenar en local storage
                     localStorage.setItem("theme", "light");
                 }
