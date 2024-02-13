@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import Lamp from "../components/Lamp.astro";
 import { ViewTransitions } from "astro:transitions";
 import Stars from "@/components/Stars.astro";
+import Clouds from "@/components/Clouds.astro";
 
 interface Props {
   title: string;
@@ -32,6 +33,7 @@ const { description, title } = Astro.props;
   >
     <Header />
     <Stars />
+    <Clouds />
     <Lamp />
     <slot />
     <Footer />
