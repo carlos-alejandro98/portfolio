@@ -10,9 +10,9 @@ let textoBienvenida;
 
 if (hours < 12) {
   textoBienvenida = "Buenos días";
-} else if (hours < 17) {
+} else if (hours <= 20) {
   textoBienvenida = "Buenas tardes";
-} else {
+} else if(hours >= 20) {
   textoBienvenida = "Buenas noches";
 }
 
