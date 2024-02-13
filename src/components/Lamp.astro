@@ -38,11 +38,15 @@
             lamp.classList.toggle("dark");
         }
         switchSelect.checked = true;
+        star?.classList.remove("hidden");
+        cloud?.classList.add("hidden");
         document.documentElement.classList.add("dark");
     } else {
         if (lamp != null) {
             lamp.classList.toggle("light");
         }
+        star?.classList.add("hidden");
+        cloud?.classList.remove("hidden");
         switchSelect.checked = false;   
     }
 </script>
