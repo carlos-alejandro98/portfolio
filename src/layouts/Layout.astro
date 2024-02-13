@@ -38,6 +38,8 @@ const { description, title } = Astro.props;
     <slot />
     <Footer />
     <style is:global>
+      @import url(https://unpkg.com/css-peeps@1/css-peeps.compat.css);
+
       :root {
         color-scheme: light dark;
       }
@@ -61,7 +63,8 @@ const { description, title } = Astro.props;
         );
       }
 
-      html, body{
+      html,
+      body {
         overflow-x: hidden;
       }
 

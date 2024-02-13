@@ -3,6 +3,7 @@ const personalImageAlt = "Carlos Abarca";
 import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
+import CarlosIcon from "@/components/CARLOS.astro";
 
 const hours = new Date().getHours();
 let textoBienvenida;
@@ -40,10 +41,6 @@ if (hours < 12) {
     </nav>
   </div>
   <div class="flex justify-center max-sm:mt-6">
-    <img
-      class="shadow-lg size-72 max-sm:w-full"
-      src="/yo2.jpg"
-      alt={personalImageAlt}
-    />
+    <CarlosIcon />
   </div>
 </div>
