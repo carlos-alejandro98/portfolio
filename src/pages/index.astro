@@ -11,6 +11,37 @@ import Projects from "@/components/Projects.astro";
 import SectionContainer from "@/components/SectionContainer.astro";
 import Hero from "@/components/Hero.astro";
 import CertificateCard from "@/components/CertificateCard.astro";
+import Carousel from "@/components/Carousel.astro";
+
+const skillsFront = {
+    "html": "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg",
+    "css": "https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg",
+    "javascript": "https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg",
+    "react": "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+    "git": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg",
+    "github": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+    "tailwaind": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+};
+
+const skillsBack = {
+    "node": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+    "express": "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png",
+    "mongodb": "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg",
+    "mysql": "https://www.vectorlogo.zone/logos/mysql/mysql-ar21.svg",
+    "firebase": "https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg",
+    "java": "https://www.vectorlogo.zone/logos/java/java-ar21.svg"
+}
+
+const skillDevOps = {
+    "docker": "https://www.vectorlogo.zone/logos/docker/docker-ar21.svg",
+    "kubernetes": "https://www.vectorlogo.zone/logos/kubernetes/kubernetes-ar21.svg",
+    "jenkins": "https://www.vectorlogo.zone/logos/jenkins/jenkins-ar21.svg",
+    "aws": "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg",
+    "azure": "https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-ar21.svg",
+    "gcp": "https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.svg"
+}
+
+
 ---
 
 <Layout title="Porfolio de Carlos Abarca" description="">
@@ -48,6 +79,30 @@ import CertificateCard from "@/components/CertificateCard.astro";
         Certificados
       </h2>
       <CertificateCard />
+    </SectionContainer>
+
+    <SectionContainer class="py-10" id="certificados">
+      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3">
+        <BookIcon class="size-7" />
+        Skills FrontEnd
+      </h2>
+      <Carousel skillsFront={skillsFront} />
+    </SectionContainer>
+
+    <SectionContainer class="py-10" id="certificados">
+      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3">
+        <BookIcon class="size-7" />
+        Skills BackEnd
+      </h2>
+      <Carousel skillsFront={skillsBack} />
+    </SectionContainer>
+
+    <SectionContainer class="py-10" id="certificados">
+      <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3">
+        <BookIcon class="size-7" />
+        Skills DevOps
+      </h2>
+      <Carousel skillsFront={skillDevOps} />
     </SectionContainer>
   </main>
 </Layout>
