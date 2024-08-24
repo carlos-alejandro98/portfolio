@@ -41,6 +41,20 @@ if (hours < 12) {
     </nav>
   </div>
   <div class="flex justify-center max-sm:mt-6">
-    <CarlosIcon />
+    <!--<CarlosIcon /> -->
+    <img
+      class="w-80 h-80 object-contain img-logo-carlos"
+      src="/carlos-icon.png"
+      alt={personalImageAlt}
+    />
   </div>
 </div>
+
+<style>
+  .img-logo-carlos {
+    mask-image: linear-gradient(
+      black 80%,
+      transparent
+    );
+  }
+</style>
